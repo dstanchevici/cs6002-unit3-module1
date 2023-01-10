@@ -1,0 +1,36 @@
+
+public class PangramCheck {
+
+    public static void main (String[] argv)
+    {
+        // Pangram: a sentence with at least one occurence of each letter 'a' to 'z'.
+
+        String[] pangramWords = {"two", "driven", "jocks", "help", "fax", "my", "big", "quiz"};
+        boolean isPangram = checkPangram (pangramWords);
+        System.out.println ("isPangram=" + isPangram);
+
+        String[] pangram2 = {"the", "quick", "brown", "fox", "jumps", "over", "a", "lazy", "dog"};
+        isPangram = checkPangram (pangram2);
+        System.out.println ("isPangram=" + isPangram);
+
+        String[] pangram3 = {"how", "vexingly", "quick", "daft", "zebra", "jumped"};
+        isPangram = checkPangram (pangram3);
+        System.out.println ("isPangram=" + isPangram);
+    }
+
+
+    static boolean checkPangram (String[] words)
+    {
+        int start = (int) 'a';
+        int end = (int) 'z';
+
+        // INSERT YOUR CODE HERE. YOU DON'T HAVE TO USE start AND end.
+
+    }
+
+    static boolean charExists (String w, char ch)
+    {
+	// THIS MIGHT BE USEFUL TO WRITE
+    }
+
+}
