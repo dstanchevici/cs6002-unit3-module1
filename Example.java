@@ -1,0 +1,10 @@
+public class Example {
+
+    public static void main (String[] argv)
+    {
+        int x=1, y=2, z;
+        z = x + y;
+        System.out.println (z);
+    }
+
+}

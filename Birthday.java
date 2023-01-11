@@ -1,0 +1,51 @@
+
+public class Birthday {
+
+    public static void main (String[] argv)
+    {
+        double p = birthdayProblem (10);
+        System.out.println ("Prob[shared bday with 10 people] = " + p);
+    }
+
+
+    static double birthdayProblem (int numPeople)
+    {
+        // Number of times to repeatedly create a random group of people:
+        int numTrials = 10000;
+
+        // We'll need to count how often we get a shared b'day.
+        int numTrialSuccesses = 0;
+
+        // Repeat and count.
+        for (int n=0; n<numTrials; n++) {
+
+            // Generate birthdays (random array)
+            int[] birthdays = new int [numPeople];
+            for (int i=0; i<birthdays.length; i++) {
+                birthdays[i] = RandTool.uniform (1, 365);
+            }
+
+            // Check if any two match.
+            if ( checkMatchExists(birthdays) ) {
+                numTrialSuccesses ++;
+            }
+            
+        } //end-for-trials
+        
+        double prob = (double) numTrialSuccesses / (double) numTrials;
+        return prob;
+    }
+    
+    static boolean checkMatchExists (int[] birthdays) 
+    {
+	for (int i=0; i<birthdays.length-1; i++) {
+	    for (int j=i+1; j<birthdays.length; j++) {
+		if (birthdays[i] == birthdays[j]) {
+		    return true;
+		}
+	    }
+	}
+	return false;
+    }
+
+}
